@@ -1,6 +1,11 @@
 document.getElementById('applyForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent the form from submitting in the traditional way
 
+    // Disable the submit button to prevent multiple submissions
+    const submitButton = document.getElementById('submitButton');
+    submitButton.disabled = true;
+    submitButton.innerText = 'Submitting...';
+
     // Collect form data
     const name = document.getElementById('name').value;
     const timeSpent = document.getElementById('timeSpent').value;
@@ -8,6 +13,7 @@ document.getElementById('applyForm').addEventListener('submit', function(e) {
     const coolWithEveryone = document.getElementById('coolWithEveryone').value;
     const knowCommands = document.getElementById('knowCommands').value;
     const knowSupport = document.getElementById('knowSupport').value;
+    const age = document.getElementById('age').value;
 
     // Format the message to be sent to Discord
     const message = `
@@ -19,6 +25,7 @@ document.getElementById('applyForm').addEventListener('submit', function(e) {
 **Cool with Everyone:** ${coolWithEveryone}
 **Know Admin Commands:** ${knowCommands}
 **Know Support Team:** ${knowSupport}
+**Age:** ${age}
     `;
 
     // Send the data to Discord using the webhook
@@ -45,7 +52,13 @@ document.getElementById('applyForm').addEventListener('submit', function(e) {
             document.getElementById('thankYouMessage').classList.remove('hidden');
         } else {
             console.error('Failed to submit application:', response.statusText);
+            submitButton.disabled = false;
+            submitButton.innerText = 'Submit Application';
         }
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+        submitButton.disabled = false;
+        submitButton.innerText = 'Submit Application';
+    });
 });
