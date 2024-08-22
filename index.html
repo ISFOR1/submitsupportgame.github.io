@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morocco Hangout Support Apply</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1 class="animated fadeInDown">Morocco Hangout Support Apply</h1>
+    </header>
+    
+    <main>
+        <section class="animated fadeInUp">
+            <h2>Requirements to Apply</h2>
+            <ul>
+                <li>You need to spend a lot of time on the game.</li>
+                <li>If there is any problem, try to fix it without involving higher-ups (unless necessary).</li>
+                <li>You need to be cool with everyone and avoid using swear words.</li>
+                <li>You should know the admin commands to avoid mistakes.</li>
+                <li>Know the current support team members.</li>
+            </ul>
+        </section>
+        
+        <section class="animated fadeInUp delay-1s">
+            <h2>Apply Now</h2>
+            <form id="applyForm" class="animated fadeInUp delay-2s">
+                <div class="input-group">
+                    <label for="name"><i class="fas fa-user"></i> Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="timeSpent"><i class="fas fa-clock"></i> Time Spent on Game:</label>
+                    <input type="text" id="timeSpent" name="timeSpent" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="problemSolving"><i class="fas fa-tools"></i> How do you handle problems?</label>
+                    <textarea id="problemSolving" name="problemSolving" required></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label for="coolWithEveryone"><i class="fas fa-smile"></i> Are you cool with everyone? (Yes/No)</label>
+                    <input type="text" id="coolWithEveryone" name="coolWithEveryone" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="knowCommands"><i class="fas fa-terminal"></i> Do you know the admin commands? (Yes/No)</label>
+                    <input type="text" id="knowCommands" name="knowCommands" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="knowSupport"><i class="fas fa-users"></i> Do you know the current support team? (Yes/No)</label>
+                    <input type="text" id="knowSupport" name="knowSupport" required>
+                </div>
+                
+                <button type="submit" class="animated bounceIn">Submit Application</button>
+            </form>
+        </section>
+    </main>
+    
+    <div id="thankYouMessage" class="hidden">
+        <h2>Thank you for submitting your application!</h2>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 ISFOR Devs</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
